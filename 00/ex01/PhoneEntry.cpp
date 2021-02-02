@@ -41,18 +41,10 @@ void    PhoneEntry::ShowMore(void)
 
 void    PhoneEntry::ShowField(std::string field)
 {
-	int	i;
-
     if (field.length() <= 10)
 		std::cout << std::setw(10) << field;
 	else
-	{
-		i = 0;
-		while (i < 9)
-			std::cout << field[i++];
-		std::cout << '.';
-	}
-
+		std::cout << field.substr(0, 9) + ".";
 }
 
 void    PhoneEntry::SetFields(void)
@@ -79,7 +71,31 @@ void    PhoneEntry::SetFields(void)
 	getline(std::cin, darkest_secret);
 }
 
+std::string	PhoneEntry::GetBirthday()		{return birthday;}
+std::string	PhoneEntry::GetDarkestSecret()	{return darkest_secret;}
+std::string	PhoneEntry::GetEmail()			{return email;}
+std::string	PhoneEntry::GetFirstName()		{return firstname;}
+std::string	PhoneEntry::GetLastName()		{return lastname;}
+std::string	PhoneEntry::GetLogin()			{return login;}
+std::string	PhoneEntry::GetMeal()			{return meal;}
+std::string	PhoneEntry::GetNickName()		{return nickname;}
+std::string	PhoneEntry::GetPhone()			{return phone;}
+std::string	PhoneEntry::GetUnderwearColor()	{return underwear_color;}
+std::string	PhoneEntry::GetAddress()		{return address;}
+
+void		PhoneEntry::SetDarkestSecret(std::string str)	{darkest_secret = str;}
+void		PhoneEntry::SetBirthday(std::string str)		{birthday = str;}
+void		PhoneEntry::SetEmail(std::string str)			{email = str;}
+void		PhoneEntry::SetFirstName(std::string str)		{firstname = str;}
+void		PhoneEntry::SetLastName(std::string str)		{lastname = str;}
+void		PhoneEntry::SetLogin(std::string str)			{login = str;}
+void		PhoneEntry::SetMeal(std::string str)			{meal = str;}
+void		PhoneEntry::SetNickName(std::string str)		{nickname = str;}
+void		PhoneEntry::SetPhone(std::string str)			{phone = str;}
+void		PhoneEntry::SetUnderwearColor(std::string str)	{underwear_color = str;}
+
 PhoneEntry::PhoneEntry(void)
 {}
+
 PhoneEntry::~PhoneEntry(void)
 {}

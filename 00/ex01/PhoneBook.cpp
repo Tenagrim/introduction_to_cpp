@@ -3,14 +3,12 @@
 
 PhoneBook::PhoneBook(void)
 {
-    std::cout << "Book constructor\n";
     cap = 8;
     size = 0;
 }
 PhoneBook::~PhoneBook(void)
-{
-    std::cout << "Book desstructor\n";
-}
+{}
+
 void    PhoneBook::AddEntry()
 {
     if (size < cap)
