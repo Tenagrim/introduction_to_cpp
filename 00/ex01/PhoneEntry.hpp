@@ -1,5 +1,5 @@
-#ifndef PHONE_ENTRY
-#define PHONE_ENTRY
+#ifndef PHONE_ENTRY_HPP
+#define PHONE_ENTRY_HPP
 #include <iostream>
 #include <iomanip>
 class PhoneEntry
