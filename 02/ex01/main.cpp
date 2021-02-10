@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 #include <iostream>
-		#define QUIET
 int main(void)
 {
 	{

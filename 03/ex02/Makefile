@@ -1,0 +1,16 @@
+NAME=ex02
+SRC=main.cpp  FragTrap.cpp ScavTrap.cpp ClapTrap.cpp
+HPP=FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
+CC= clang++
+FLAGS= -Wall -Wextra  #FIXME Weror
+
+all: $(NAME)
+
+$(NAME): $(SRC) $(HPP)
+	$(CC) $(FLAGS) -o $(NAME) $(SRC);
+
+fclean:
+	rm -rf $(NAME);
+
+re: fclean all
+

@@ -94,10 +94,13 @@ void	FragTrap::takeDamage(unsigned int amount)
 		std::cout << "No damage! Fall before your robot overlord! Ha ha ha!\n"; 
 		return;
 	}
+	hit_points -= amount;
 	std::cout<< "] " << quotes[rand() % 8];
-	hit_points += amount;
-	if (hit_points == 0)
+	if (hit_points <= 0)
+	{
+		hit_points = 0;
 		std::cout << "FR4G-TP " << name << " was disassembled\n";
+	}
 }
 
 void	FragTrap::beRepaired(unsigned int amount)
