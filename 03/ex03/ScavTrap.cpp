@@ -52,6 +52,20 @@ ScavTrap::~ScavTrap()
 	std::cout << "Disassembling SC4V-TP core\n";
 }
 
+void ScavTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "] " << "Attack on target" << "\n";
+	std::cout << "SC4V-TP " << name << " hits " << target <<
+	", causing " << melee_attack_damage << " points of damage\n"; 
+}
+
+void ScavTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "] " << "Get off here!" << "\n";
+	std::cout << "SC4V-TP " << name << " offends " << target <<
+	" at range, causing " << ranged_attack_damage << " points of damage\n"; 
+}
+
 void	ScavTrap::challengeNewcomer(const std::string &target)
 {
 	std::string	quotes[] = {"collect 139 377 brown rocks",

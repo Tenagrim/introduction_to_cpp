@@ -58,6 +58,26 @@ FragTrap &FragTrap::operator=(const FragTrap&ref)
 	return (*this);
 }
 
+void FragTrap::meleeAttack(const std::string &target)
+{
+	std::string		quotes[] = {"Hyah!", "Heyyah!", "Take that!", "Bop!",
+	"I'm gonna put my Pain ito your soul!!"};
+	std::cout << "] " << quotes[rand() % 5] << "\n";
+	std::cout << "FR4G-TP " << name << " bumps " << target <<
+	", causing " << melee_attack_damage << " points of damage\n"; 
+}
+
+void FragTrap::rangedAttack(const std::string &target)
+{
+	std::string		quotes[] = {"I am a tornado of death and bullets!",
+	"Throwing grenade!", "Hot potato!", "Eat bomb, baddie!", "Bad guy go boom!",
+	"Step right up, to the Bulletnator 9000!", "Ha ha ha! Fall before your robot overlord!",
+	"Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!"};
+	std::cout << "] " << quotes[rand() % 8] << "\n";
+	std::cout << "FR4G-TP " << name << " attacks " << target <<
+	" at range, causing " << ranged_attack_damage << " points of damage\n"; 
+}
+
 void		FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	std::string	quotes[] = {"Defragmenting!", "Recompiling my combat code!",

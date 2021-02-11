@@ -1,0 +1,63 @@
+#include "SuperTrap.hpp"
+
+SuperTrap::SuperTrap() : ClapTrap()
+{
+	energy_points = 120;
+	max_energy_points = 120;
+	name = "Unnamed SuperTrap";
+	melee_attack_damage = 60;
+	ranged_attack_damage = 20;
+	armor_damage_reduction = 5;
+	type = "SP3R-TP"; 
+}
+
+SuperTrap::SuperTrap(const std::string &name) : SuperTrap()
+{
+	this->name = name;
+}
+
+SuperTrap::SuperTrap(const SuperTrap &ref)
+{
+	std::cout << "] Awakening as a copy of <SP3R-TP> "<< name << "...\n";
+	name = ref.name;
+	hit_points = ref.hit_points;
+	max_energy_points = ref.max_energy_points;
+	energy_points = ref.energy_points;
+	max_hit_points = ref.max_hit_points;
+	ranged_attack_damage = ref.ranged_attack_damage;
+	melee_attack_damage = ref.melee_attack_damage;
+	armor_damage_reduction = ref.armor_damage_reduction;
+	level = ref.level;
+}
+
+SuperTrap::~SuperTrap()
+{
+	std::cout << "Disassembling super core\n";
+}
+
+SuperTrap &SuperTrap::operator=(const SuperTrap& ref)
+{
+	std::cout << "Assignation operator called for <SP3R-TP> "<< name <<"\n";
+	name = ref.name;
+	hit_points = ref.hit_points;
+	max_energy_points = ref.max_energy_points;
+	energy_points = ref.energy_points;
+	max_hit_points = ref.max_hit_points;
+	ranged_attack_damage = ref.ranged_attack_damage;
+	melee_attack_damage = ref.melee_attack_damage;
+	armor_damage_reduction = ref.armor_damage_reduction;
+	level = ref.level;
+	return (*this);
+}
+
+void SuperTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "] " << "Super melee attack" << "\n";
+	this->NinjaTrap::meleeAttack(target);
+}
+
+void SuperTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "] " << "Super ranged attack" << "\n";
+	this->FragTrap::rangedAttack(target);
+}

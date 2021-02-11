@@ -11,6 +11,8 @@ public:
 	ScavTrap(const ScavTrap &ref);
 	~ScavTrap();
 	ScavTrap	&operator=(const ScavTrap &ref);
+	void		rangedAttack(const std::string &target);
+	void		meleeAttack(const std::string &target);
 	void		challengeNewcomer(const std::string &target);
 };
 

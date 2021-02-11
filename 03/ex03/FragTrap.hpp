@@ -11,6 +11,8 @@ public:
 	FragTrap(const std::string name);
 	~FragTrap();
 	FragTrap	&operator=(const FragTrap& ref);
+	void		rangedAttack(const std::string &target);
+	void		meleeAttack(const std::string &target);
 	void		vaulthunter_dot_exe(std::string const & target);
 };
 

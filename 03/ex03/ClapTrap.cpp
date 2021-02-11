@@ -42,6 +42,7 @@ ClapTrap::ClapTrap(const ClapTrap&ref)
 	armor_damage_reduction = ref.armor_damage_reduction;
 	level = ref.level;
 }
+
 void ClapTrap::meleeAttack(const std::string &target)
 {
 	std::cout << type <<" " << name << " attacks " << target <<
