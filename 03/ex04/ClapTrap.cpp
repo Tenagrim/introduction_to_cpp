@@ -82,7 +82,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return;
 	if (hit_points + (int)amount > max_hit_points)
 		amount = (max_hit_points - hit_points);
-	std::cout << type <<" was repaired with " << amount << " hit point";
+	std::cout << type << " " << name << " was repaired with " << amount << " hit point";
 	if ( amount != 1)
 		std::cout << "s";
 	std::cout << "!\n";
