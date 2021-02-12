@@ -6,7 +6,7 @@ class Peon : public Victim
 private:
 	Peon();
 public:
-	~Peon();
+	virtual ~Peon();
 	Peon(const Peon &ref);
 	Peon(const std::string &name);
 	Peon		&operator=(const Peon &ref); 

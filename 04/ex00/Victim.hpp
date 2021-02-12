@@ -8,7 +8,7 @@ protected:
 	Victim();
 
 public:
-	~Victim();
+	virtual ~Victim();
 	Victim(const Victim &ref);
 	Victim(const std::string &name);
 	Victim				&operator=(const Victim &ref);

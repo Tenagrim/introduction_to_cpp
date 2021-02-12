@@ -5,7 +5,7 @@ class Orc : public Victim
 private:
 	Orc();
 public:
-	~Orc();
+	virtual ~Orc();
 	Orc(const std::string &name);
 	Orc(const Orc &ref);
 	Orc &operator=(const Orc &ref); 

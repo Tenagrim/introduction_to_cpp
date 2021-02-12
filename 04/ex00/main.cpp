@@ -22,14 +22,16 @@ int main()
 
 		Victim		jim("Jimmy");
 		Peon		joe("Joe");
-		Orc			nggar("Nggar");
+		Orc			*nggar = new Orc("Nggar");
 
 		std::cout << robert << jim << joe << nggar;
 
 		robert.polymorph(jim);
 		robert.polymorph(joe);
-		robert.polymorph(nggar);
-
+		robert.polymorph(*nggar);
+		std::cout << "{\n";
+		delete (nggar);
+		std::cout << "}\n";
 	}
 	std::cout << "=====================\n";
 	return 0;
