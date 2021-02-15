@@ -8,7 +8,7 @@ private:
 	int num;
 public:
 	TacticalMarine();
-	~TacticalMarine();
+	virtual ~TacticalMarine();
 	TacticalMarine(const TacticalMarine &ref);
 	TacticalMarine &operator=(const TacticalMarine &ref);
 	ISpaceMarine	*clone() const;

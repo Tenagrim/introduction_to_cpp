@@ -6,8 +6,9 @@ MarinePod::MarinePod()
 	next = nullptr;
 }
 
-MarinePod::MarinePod(ISpaceMarine *marine) : MarinePod()
+MarinePod::MarinePod(ISpaceMarine *marine)
 {
+	next = nullptr;
 	this->marine = marine;
 }
 
@@ -52,7 +53,7 @@ void	MarinePod::pushBack(MarinePod *pod)
 {
 	MarinePod *p;
 	p = this;
-	while (this->next != nullptr)
+	while (p->next != nullptr)
 		p = p->next;
 	p->next = pod;
 }

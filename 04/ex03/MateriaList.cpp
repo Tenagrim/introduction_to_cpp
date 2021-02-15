@@ -1,19 +1,19 @@
-#include"MarineList.hpp"
+#include"MateriaList.hpp"
 #include <iostream>
-MarineList::MarineList()
+MateriaList::MateriaList()
 {
 	content = nullptr;
 }
 
-MarineList::~MarineList()
+MateriaList::~MateriaList()
 {
 	clear();
 }
 
-void	MarineList::clear()
+void	MateriaList::clear()
 {
-	MarinePod *p1;
-	MarinePod *p2;
+	MateriaPod *p1;
+	MateriaPod *p2;
 
 	p1 = this->content;
 	while (p1 != nullptr)
@@ -25,22 +25,22 @@ void	MarineList::clear()
 	content = nullptr;
 }
 
-MarineList::MarineList(const MarineList &ref)
+MateriaList::MateriaList(const MateriaList &ref)
 {
 	copy(ref);
 }
 
-MarineList	&MarineList::operator=(const MarineList &ref)
+MateriaList	&MateriaList::operator=(const MateriaList &ref)
 {
 	copy(ref);
 	return (*this);
 }
 
-void		MarineList::copy(const MarineList &ref)
+void		MateriaList::copy(const MateriaList &ref)
 {
 	clear();
 	//std::cout << "ucopy "<< ref.size()<< " " << &ref << " " << this <<"\n";
-	MarinePod	*p;
+	MateriaPod	*p;
 	p = ref.content;
 	while (p != nullptr)
 	{
@@ -50,7 +50,7 @@ void		MarineList::copy(const MarineList &ref)
 	}	
 }
 
-void	MarineList::pushBack(MarinePod *pod)
+void	MateriaList::pushBack(MateriaPod *pod)
 {
 	if (content == nullptr)
 	{
@@ -60,14 +60,14 @@ void	MarineList::pushBack(MarinePod *pod)
 	content->pushBack(pod);
 }
 
-void			MarineList::pushBack(ISpaceMarine *cadet)
+void			MateriaList::pushBack(AMateria *cadet)
 {
-	pushBack(new MarinePod(cadet));
+	pushBack(new MateriaPod(cadet));
 }
 
-ISpaceMarine	*MarineList::operator[](const int index) const
+AMateria	&MateriaList::operator[](const int index)
 {
-	MarinePod	*p;
+	MateriaPod	*p;
 	int			n;
 
 	p = content;
@@ -81,13 +81,13 @@ ISpaceMarine	*MarineList::operator[](const int index) const
 		if (p == nullptr)
 			throw (std::out_of_range("out of range"));
 	}
-	return (p->getMarine());
+	return (*(p->getContent()));
 }
 
-int		MarineList::size() const
+int		MateriaList::size() const
 {
 	int count = 0;
-	MarinePod *p = content;
+	MateriaPod *p = content;
 
 	while (p != nullptr)
 	{

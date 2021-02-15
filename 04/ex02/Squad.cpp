@@ -46,7 +46,7 @@ ISpaceMarine *Squad::getUnit(int pos) const
 	return (units[pos]);
 }
 
-int Squad::push(ISpaceMarine *cadet)
+int		Squad::push(ISpaceMarine *cadet)
 {
 	if (inSquad(cadet))
 		return count;
@@ -55,7 +55,7 @@ int Squad::push(ISpaceMarine *cadet)
 	return (count);
 }
 
-bool Squad::inSquad(ISpaceMarine *marine)
+bool	Squad::inSquad(ISpaceMarine *marine)
 {
 	for (int i = 0; i < count; i++)
 		if (units[i] == marine)
@@ -63,7 +63,13 @@ bool Squad::inSquad(ISpaceMarine *marine)
 	return (false);	
 }
 
-int Squad::size() const
+int		Squad::size() const
 {
 	return units.size();
+}
+
+void	Squad::numerate() const
+{
+	for (int i = 0; i < count; i++)
+		units[i]->sayNum();
 }

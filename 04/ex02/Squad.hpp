@@ -19,4 +19,5 @@ public:
 	ISpaceMarine *getUnit(int) const;
 	int push(ISpaceMarine *);
 	int size()const;
+	void numerate() const;
 };

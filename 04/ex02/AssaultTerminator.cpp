@@ -2,6 +2,7 @@
 
 AssaultTerminator::AssaultTerminator()
 {
+	num = 0;
 	std::cout << "* teleports from space *\n";
 }
 
@@ -43,7 +44,7 @@ void			AssaultTerminator::meleeAttack(void) const
 
 void	AssaultTerminator::sayNum() const
 {
-	std::cout << "Assault. num: " << num << "\n";
+	std::cout << "Assault.  num: " << num << "\n";
 }
 
 void	AssaultTerminator::setNum(const int n)

@@ -2,6 +2,7 @@
 
 TacticalMarine::TacticalMarine()
 {
+	num = 0;
 	std::cout << "Tactical Marine ready for battle\n";
 }
 

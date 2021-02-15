@@ -8,7 +8,7 @@ private:
 	int num;
 public:
 	AssaultTerminator();
-	~AssaultTerminator();
+	virtual ~AssaultTerminator();
 	AssaultTerminator(const AssaultTerminator &ref);
 	AssaultTerminator &operator=(const AssaultTerminator &ref);
 	ISpaceMarine	*clone() const;

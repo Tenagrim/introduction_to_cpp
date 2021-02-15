@@ -49,6 +49,12 @@ int main(void)
 		std::cout << "Count: " << vlc->size() << "\n";
 		std::cout << "Count: " << vlc->getCount() << "\n";
 
+		vlc->push(new AssaultTerminator);
+		vlc->push(new AssaultTerminator);
+
+		std::cout << "2 Count: " << vlc->size() << "\n";
+		
+		vlc->numerate();
 		delete vlc;
 		delete vcc;
 	}
