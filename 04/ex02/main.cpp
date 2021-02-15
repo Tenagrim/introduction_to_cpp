@@ -42,6 +42,13 @@ int main(void)
 		vcc->getUnit(1)->sayNum();
 		vcc->getUnit(0)->sayNum();
 		
+		vlc->push(jim);
+		vlc->push(jim);
+		vlc->push(jim);
+
+		std::cout << "Count: " << vlc->size() << "\n";
+		std::cout << "Count: " << vlc->getCount() << "\n";
+
 		delete vlc;
 		delete vcc;
 	}
