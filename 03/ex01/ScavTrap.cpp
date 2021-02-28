@@ -1,6 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:40:34 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:48:46 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ScavTrap()
+ScavTrap::ScavTrap(std::string name) : hit_points(100), max_hit_points(100),
+energy_points(50), max_energy_points(50),
+ level(1), name("SC4V-TP"), melee_attack_damage(20),ranged_attack_damage(15),
+armor_damage_reduction(3)
 {
 	this->name = name;
 	std::cout <<"] Greetings, traveller..\n";

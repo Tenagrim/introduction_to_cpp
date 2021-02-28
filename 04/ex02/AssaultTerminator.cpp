@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AssaultTerminator.cpp                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 16:16:16 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 16:16:18 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"AssaultTerminator.hpp"
 
 AssaultTerminator::AssaultTerminator()
@@ -11,9 +23,11 @@ AssaultTerminator::~AssaultTerminator()
 	std::cout << "I'll be back...\n";
 }
 
-AssaultTerminator::AssaultTerminator(const AssaultTerminator &ref) : AssaultTerminator()
+AssaultTerminator::AssaultTerminator(const AssaultTerminator &ref)
 {
 	(void)ref;
+	num = 0;
+	std::cout << "* teleports from space *\n";
 }
 
 AssaultTerminator	&AssaultTerminator::operator=(const AssaultTerminator &ref)

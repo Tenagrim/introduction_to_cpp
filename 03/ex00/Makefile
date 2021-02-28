@@ -2,7 +2,7 @@ NAME=ex00
 SRC=main.cpp  FragTrap.cpp
 HPP=FragTrap.hpp
 CC= clang++
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 

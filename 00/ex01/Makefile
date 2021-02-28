@@ -2,7 +2,7 @@ NAME=phonebook
 SRC=PhoneBook.cpp PhoneEntry.cpp main.cpp
 HPP=PhoneBook.hpp PhoneEntry.hpp
 CC= clang++
-FLAGS= -Wall -Wextra #FIXME Weror
+FLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@ ICharacter.hpp IMateriaSource.hpp MateriaList.hpp MateriaPod.hpp \
 Fire.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
-FLAGS= -Wall -Wextra  -g #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 

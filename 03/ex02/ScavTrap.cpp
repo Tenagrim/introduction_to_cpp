@@ -1,10 +1,16 @@
-#include "ScavTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:41:27 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:41:28 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-ScavTrap::ScavTrap(std::string name) : ScavTrap()
-{
-	this->name = name;
-	std::cout <<"] Greetings, traveller..\n";
-}
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap() 
 {
@@ -15,6 +21,19 @@ ScavTrap::ScavTrap() : ClapTrap()
 	melee_attack_damage = 20;
 	armor_damage_reduction = 3;
 	type = "SC4V-TP"; 
+}
+
+ScavTrap::ScavTrap(std::string name) 
+{
+	std::cout << "] Awakening as ScavTrap...\n";
+	max_energy_points = 50;
+	energy_points = 50;
+	ranged_attack_damage = 15;
+	melee_attack_damage = 20;
+	armor_damage_reduction = 3;
+	type = "SC4V-TP";
+	this->name = name;
+	std::cout <<"] Greetings, traveller..\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap &ref) 

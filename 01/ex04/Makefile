@@ -1,7 +1,7 @@
 NAME=ex04
-SRC=ex04.cpp  
+SRC=ex04.cpp
 CC= clang++
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 

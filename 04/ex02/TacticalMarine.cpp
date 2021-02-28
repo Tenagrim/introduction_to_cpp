@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   TacticalMarine.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 16:16:27 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 16:16:28 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"TacticalMarine.hpp"
 
 TacticalMarine::TacticalMarine()
@@ -11,9 +23,11 @@ TacticalMarine::~TacticalMarine()
 	std::cout << "Aaargh...\n";
 }
 
-TacticalMarine::TacticalMarine(const TacticalMarine &ref) : TacticalMarine()
+TacticalMarine::TacticalMarine(const TacticalMarine &ref)
 {
 	(void)ref;
+	num = 0;
+	std::cout << "Tactical Marine ready for battle\n";
 }
 
 TacticalMarine	&TacticalMarine::operator=(const TacticalMarine &ref)

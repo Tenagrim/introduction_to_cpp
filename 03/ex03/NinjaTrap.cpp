@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:42:38 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:42:39 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "NinjaTrap.hpp"
 
 NinjaTrap::NinjaTrap() : ClapTrap()
@@ -13,8 +25,18 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 	type = "NG4-TP"; 
 }
 
-NinjaTrap::NinjaTrap(const std::string &name) : NinjaTrap()
+NinjaTrap::NinjaTrap(const std::string &name)
 {
+	std::cout << "] Initializing as NinjaTrap...\n";
+	hit_points = 60;
+	max_hit_points = 60;
+	max_energy_points = 120;
+	energy_points = 120;
+	ranged_attack_damage = 5;
+	melee_attack_damage = 60;
+	armor_damage_reduction = 0;
+	type = "NG4-TP";
+
 	this->name = name;
 	std::cout <<"] Ghosting..\n";
 }

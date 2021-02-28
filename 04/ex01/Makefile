@@ -3,7 +3,7 @@ SRC=main.cpp AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp Enemy.cpp SuperMutant.cpp
 HPP=AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp RadScorpion.hpp Character.hpp DeathClaw.hpp Minigun.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
-FLAGS= -Wall -Wextra  -g #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 
