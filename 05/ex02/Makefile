@@ -1,6 +1,6 @@
-NAME=ex01
-SRC=main.cpp Bureaucrat.cpp Form.cpp
-HPP=Bureaucrat.hpp Form.hpp
+NAME=ex02
+SRC=main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+HPP=Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
 FLAGS= -Wall -Wextra  -Werror

@@ -3,7 +3,7 @@ SRC=main.cpp Bureaucrat.cpp
 HPP=Bureaucrat.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 
