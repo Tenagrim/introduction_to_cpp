@@ -27,6 +27,11 @@ private:
 		public:
 		AlreadySignedException(std::string const &msg) : std::runtime_error(msg){}
 	};
+	class NotSigned: public std::runtime_error
+	{
+		public:
+		NotSigned(std::string const &msg) : std::runtime_error(msg){}
+	};
 	Form();
 public:
 	virtual ~Form();

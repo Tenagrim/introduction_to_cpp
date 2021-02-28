@@ -61,6 +61,15 @@ void	Bureaucrat::decrement()
 }
 void	Bureaucrat::executeForm(Form const &form)
 {
+	if (!form.isSigned())
+	{
+		std::cout << *this << " cannot execute " << form << " because this form is nos signed\n";
+	}
+	else if (form.getGradeToExecute() < this->grade)
+	{
+		std::cout << *this << " cannot execute " << form << " because it's grade is too low\n";
+	}
+	else
+		std::cout << *this << " executes " << form << "\n";
 	form.execute(*this);
-	std::cout << *this << " executes " << form << "\n";
 }

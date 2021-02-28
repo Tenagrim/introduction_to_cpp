@@ -76,4 +76,9 @@ void		Form::execute(Bureaucrat const &executor) const
 		ss << executor << " cannot execute " << *this << " because his grade is too low";
 		throw(Form::GradeTooLowException(ss.str()));
    }
+   else if (!_signed)
+   {
+		ss << executor << " cannot execute " << *this << " because this form is not signed\n";
+		throw(Form::GradeTooLowException(ss.str()));
+   }
 }
