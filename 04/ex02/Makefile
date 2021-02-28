@@ -3,7 +3,7 @@ SRC=main.cpp Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp MarineList.cpp M
 HPP=Squad.hpp TacticalMarine.hpp AssaultTerminator.hpp MarineList.hpp MarinePod.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
-FLAGS= -Wall -Wextra  -g #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 

@@ -2,7 +2,7 @@ NAME=MoarBrainz
 SRC=main.cpp  Zombie.cpp  ZombieHorde.cpp 
 HPP=ZombieHorde.hpp	Zombie.hpp
 CC= clang++
-FLAGS= -Wall -Wextra -g #FIXME Weror
+FLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 

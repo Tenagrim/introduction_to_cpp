@@ -2,7 +2,7 @@ NAME=ex06
 SRC=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 HPP=Weapon.hpp HumanA.hpp HumanB.hpp
 CC= clang++
-FLAGS= -Wall -Wextra -g #FIXME Weror
+FLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 

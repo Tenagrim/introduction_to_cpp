@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:39:57 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:48:13 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 FragTrap::FragTrap() : hit_points(100), max_hit_points(100),
 energy_points(100), max_energy_points(100), 
@@ -7,7 +19,10 @@ armor_damage_reduction(5)
 	std::cout << "] Initializing...\n";
 }
 
-FragTrap::FragTrap(const std::string name) : FragTrap()
+FragTrap::FragTrap(const std::string name) : hit_points(100), max_hit_points(100),
+energy_points(100), max_energy_points(100), 
+ level(1), name("CL4P-TP"),melee_attack_damage(30),ranged_attack_damage(20),
+armor_damage_reduction(5) 
 {
 	std::cout << "] Greetings, Traveler! I am "<< name <<".\n\
 	But you may call me by my locally designated name, \"" << "Claptrap" <<

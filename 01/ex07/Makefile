@@ -2,7 +2,7 @@ NAME=replace
 SRC=main.cpp
 HPP=
 CC= clang++
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 

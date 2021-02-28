@@ -2,7 +2,7 @@ NAME=ex01
 SRC=main.cpp  Fixed.cpp
 HPP=Fixed.hpp
 CC= clang++
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 

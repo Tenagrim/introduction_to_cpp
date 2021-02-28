@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:45:58 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:46:00 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 FragTrap::FragTrap() : ClapTrap() 
 {
@@ -10,8 +22,16 @@ FragTrap::FragTrap() : ClapTrap()
 	type = "FR4G-TP"; 
 }
 
-FragTrap::FragTrap(const std::string name) : FragTrap()
+FragTrap::FragTrap(const std::string name)
 {
+	std::cout << "] Initializing as FragTrap...\n";
+	max_energy_points = 100;
+	energy_points = 100;
+	ranged_attack_damage = 20;
+	melee_attack_damage = 30;
+	armor_damage_reduction = 5;
+	type = "FR4G-TP"; 
+
 	std::cout << "] Greetings, Traveler! I am "<< name <<".\n\
 But you may call me by my locally designated name, \"" << "Claptrap" <<
 	"\". \

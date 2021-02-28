@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 15:45:30 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:45:31 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap() : ClapTrap()
@@ -11,8 +23,14 @@ SuperTrap::SuperTrap() : ClapTrap()
 	type = "SP3R-TP"; 
 }
 
-SuperTrap::SuperTrap(const std::string &name) : SuperTrap()
+SuperTrap::SuperTrap(const std::string &name)
 {
+	energy_points = 120;
+	max_energy_points = 120;
+	melee_attack_damage = 60;
+	ranged_attack_damage = 20;
+	armor_damage_reduction = 5;
+	type = "SP3R-TP";
 	this->name = name;
 }
 

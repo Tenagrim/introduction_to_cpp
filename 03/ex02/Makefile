@@ -2,7 +2,7 @@ NAME=ex02
 SRC=main.cpp  FragTrap.cpp ScavTrap.cpp ClapTrap.cpp
 HPP=FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
 CC= clang++
-FLAGS= -Wall -Wextra  #FIXME Weror
+FLAGS= -Wall -Wextra  -Werror
 
 all: $(NAME)
 
