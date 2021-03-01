@@ -21,6 +21,11 @@ private:
         Form        *makeForm(std::string const &target);
         std::string const &getIdent() const;
     };
+	class FormNotFoundException: public std::runtime_error
+	{
+		public:
+		FormNotFoundException(std::string const &msg) : std::runtime_error(msg){}
+	};
     TableEntry  *table;
     void addEntry(std::string const &ident, Form *(*maker)(std::string const &));
 public:

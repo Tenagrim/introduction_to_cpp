@@ -127,5 +127,6 @@ Form *Intern::makeForm(std::string const &type, std::string const &target)
         p = p->getNext();
     }
     std::cout << "Requested form not found\n";
+    throw FormNotFoundException("Requested form not found");
     return (res);
 }
