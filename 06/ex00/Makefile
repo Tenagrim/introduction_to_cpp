@@ -1,6 +1,6 @@
 NAME=ex00
-SRC=main.cpp 
-HPP=
+SRC=main.cpp Converter.cpp
+HPP= Converter.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
 FLAGS= -Wall -Wextra  -Werror
