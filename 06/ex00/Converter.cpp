@@ -97,6 +97,8 @@ void	Converter::fromChar()
 
 void	Converter::fromFloat()
 {
+	if (flags & F_IS_LEXICAL)
+		this->double_value = static_cast<double>(this->float_value);
 	if (flags & F_IS_LEXICAL || this->float_value < 0.0f || this->float_value > 127.0f)
 		this->flags |= F_CHAR_IMP;
 	else
@@ -221,7 +223,7 @@ int		Converter::convert()
 
 
 	tmp << double_value;
-	if (tmp.str().find('.') == std::string::npos)
+	if (tmp.str().find('.') == std::string::npos && !(flags & F_IS_LEXICAL))
 		flags |= F_EMP_MAN;
 	return (0);
 }
