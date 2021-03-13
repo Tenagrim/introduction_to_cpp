@@ -2,6 +2,10 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <limits>
+#include <iomanip>
+//#include <ios>
+
 #define F_POINT 1
 #define F_ENDS_F 2
 #define	F_IS_CHAR 4
@@ -13,6 +17,7 @@
 #define F_CHAR_IMP 256
 #define F_CHAR_ND 512
 #define F_INT_IMP 1024
+#define F_EMP_MAN 2048
 
 
 class Converter
@@ -23,25 +28,20 @@ private:
 		public:
 		InvalidInputException(std::string const &msg) : std::runtime_error(msg){}
 	};
-    void    throwWrongInput() const;
     int     flags;
-    int     num_chars;
-    int     not_num_chars;
     int     int_value;
     float   float_value;
     double  double_value;
     char    char_value;
     std::string input;
-    std::string char_repr;
-    std::string int_repr;
-    std::string float_repr;
-    std::string double_repr;
     Converter();
     int     wrongInputRet();
     void    fromChar();
     void    fromInt();
     void    fromFloat();
     void    fromDouble();
+    void    throwWrongInput() const;
+    void    assign(const Converter & ref);
 public:
     Converter(const std::string &input);
     ~Converter();
