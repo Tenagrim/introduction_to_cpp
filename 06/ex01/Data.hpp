@@ -9,4 +9,3 @@ struct Data
 };
 void	*serialize(void);
 Data	*deserialize(void * raw);
-Data	*random_data();
