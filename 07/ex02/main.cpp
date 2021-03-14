@@ -34,7 +34,6 @@ void	tests()
 
 	std::cout << "modidied em: \n";	
 	print_arr(em);
-
 }
 
 int main(void)
@@ -51,6 +50,5 @@ int main(void)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}
-	
+	}	
 }
