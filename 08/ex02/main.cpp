@@ -1,6 +1,7 @@
 #include "mutantstack.hpp"
 #include <iostream>
 #include <list>
+
 void	given_testcase()
 {
 	MutantStack<int> mstack;
@@ -25,6 +26,7 @@ void	given_testcase()
 	}
 	std::stack<int> s(mstack);
 }
+
 void	given_testcase_list()
 {
 	std::list<int> mstack;
@@ -49,10 +51,39 @@ void	given_testcase_list()
 	}
 	//std::stack<int> s(mstack);
 }
+
+void	testcase()
+{
+	MutantStack<int> st;
+	for (size_t i = 0; i < 100; i++)
+		st.push(i + rand() % 2);
+
+	for (MutantStack<int>::iterator i = st.begin(); i != st.end(); i++)
+		std::cout << *i << " ";	
+	std::cout << "\n";
+}
+
+void	testcase_list()
+{
+	std::list<int> st;
+	for (size_t i = 0; i < 100; i++)
+		st.push_front(i + rand() % 2);
+
+	for (std::list<int>::iterator i = st.begin(); i != st.end(); i++)
+		std::cout << *i << " ";	
+	std::cout << "\n";
+}
+
 int main()
 {
+	std::cout << "==================\n";
 	given_testcase();
 	std::cout << "==================\n";
 	given_testcase_list();
+	std::cout << "==================\n";
+	testcase();
+	std::cout << "==================\n";
+	testcase_list();
+	std::cout << "==================\n";
 	return 0;
 }

@@ -10,7 +10,7 @@ public:
 	MutantStack();
 	virtual ~MutantStack();
 	MutantStack(const MutantStack &ref);
-	typedef typename std::stack<T>::container_type::iterator iterator;
+	typedef typename std::stack<T>::container_type::reverse_iterator iterator;
 	using	std::stack<T>::operator=;
 	iterator	begin();
 	iterator	end();
@@ -29,13 +29,13 @@ MutantStack<T>::MutantStack(const MutantStack &ref) : std::stack<T>(ref)
 {}
 
 template <typename T>
-typename std::stack<T>::container_type::iterator	MutantStack<T>::begin()
+typename std::stack<T>::container_type::reverse_iterator	MutantStack<T>::begin()
 {
-	return(this->c.begin());
+	return(this->c.rbegin());
 }
 
 template <typename T>
-typename std::stack<T>::container_type::iterator	MutantStack<T>::end()
+typename std::stack<T>::container_type::reverse_iterator	MutantStack<T>::end()
 {
-	return(this->c.end());
+	return(this->c.rend());
 }
