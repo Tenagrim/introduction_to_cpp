@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 17:42:31 by gshona            #+#    #+#             */
+/*   Updated: 2021/03/15 17:42:45 by gshona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
-#include <iostream> //FIXME
+#include <iostream>
 class Span
 {
 private:
