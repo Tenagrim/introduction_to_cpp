@@ -16,6 +16,5 @@
 int     main(void)
 {
     PhoneBook book;
-    //book.Show();
     book.MainCycle();
 }
