@@ -51,17 +51,16 @@ void PhoneBook::Show(void)
 	}
     std::cout << "Enter index for detailed watch: ";
 	getline(std::cin, str);
-	try
-	{
-		i = std::stoi(str);
-	}
-	catch(const std::invalid_argument& e)
-	{
+	if (sscanf(str.c_str(), "%d", &i) != 1)
+    {
 		std::cerr << "Wrong index entered: "<< str << '\n';
 		return;
 	}
 	if (i < 0 || i >= size)
+    {
+        std::cin.clear();
 		std::cout << "No such index in the book\n";
+    }
 	else
 		content[i].ShowMore();
 }
@@ -76,14 +75,13 @@ void      PhoneBook::MainCycle(void)
     {
         std::cout << "> ";
 		getline(std::cin, command);
-		//std::cout << "Command: " << command << "\n";
         if (command == "EXIT")
             quit = true;
         else if (command == "ADD")
             AddEntry();
         else if (command == "SEARCH")
             Show();
-        else
-            std::cout << "Command: " << command << " is disclared.\nOnly this commands allowed: ADD, SEARCH, EXIT\n";
+        else if (command.size() > 0)
+            std::cout << "Command: \"" << command << "\" is disclared.\nOnly this commands allowed: ADD, SEARCH, EXIT\n";
     }
 }

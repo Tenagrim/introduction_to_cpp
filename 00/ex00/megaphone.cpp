@@ -30,8 +30,8 @@ void    upcased_out(char **av)
     {
         upcase(*av);
         av++;
-        if (*av)
-        std::cout << " ";
+        //if (*av)
+        //std::cout << " ";
     }
     std::cout << "\n";
 }
