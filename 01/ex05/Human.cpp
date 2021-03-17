@@ -21,9 +21,7 @@ Human::~Human()
 
 std::string     Human::identify()
 {
-    std::stringstream ss;
-    ss << this;
-    return (ss.str());
+    return (this->brain.identify());
 }
 
 

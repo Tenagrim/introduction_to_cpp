@@ -51,6 +51,6 @@ int		main(int ac, char **av)
 		std::cerr << "Unable to open file " << av[1] << " for reading\n";
 		return (2);
 	}
-	replace(fin,av[1], av[2], av[3]);
+	replace(fin,std::string(av[1]) + ".replace", av[2], av[3]);
 	return(0);
 }
