@@ -36,7 +36,7 @@ int main()
 		Peon		joe("Joe");
 		Orc			*nggar = new Orc("Nggar");
 
-		std::cout << robert << jim << joe << nggar;
+		std::cout << robert << jim << joe << *nggar;
 
 		robert.polymorph(jim);
 		robert.polymorph(joe);
