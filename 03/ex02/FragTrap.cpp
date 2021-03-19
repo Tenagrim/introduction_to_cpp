@@ -45,7 +45,7 @@ FragTrap::~FragTrap()
 	"Brrh... So cold... brrh...", "My assets... frozen!",
 	"I can't feel my fingers! Gah! I don't have any fingers!"};
 	std::cout <<"] " << quotes[rand()% 5] << "\n";
-	std::cout << "Disassembling FR4G-TP core\n";
+	std::cout << "] Disassembling FR4G-TP core\n";
 }
 
 FragTrap::FragTrap(const FragTrap &ref)

@@ -21,7 +21,9 @@ int	main(void)
 
 	trap.takeDamage(60);
 	trap.takeDamage(60);
+	trap.takeDamage(60);
 
+	trap.beRepaired(60);
 	trap.beRepaired(60);
 	trap.beRepaired(60);
 

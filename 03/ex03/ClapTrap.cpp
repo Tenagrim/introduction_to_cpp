@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 15:42:07 by gshona            #+#    #+#             */
-/*   Updated: 2021/02/28 15:42:33 by gshona           ###   ########.fr       */
+/*   Created: 2021/02/28 15:41:22 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:41:23 by gshona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,23 @@ void	ClapTrap::rangedAttack(const std::string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	//std::cout << "health: " << hit_points << "\n";
-	amount -= armor_damage_reduction;
-	amount = (amount < 0) ? 0 : amount;
+	std::string		quotes[] = {"My robotic flesh! AAHH!\n",
+	"I AM ON FIRE!!! OH GOD, PUT ME OUT!!!\n",
+	"Ow hohoho, that hurts! Yipes!\n",
+	"If only my chassis... weren't made of recycled human body parts! Wahahaha!\n",
+	"Why do I even feel pain?!\n",
+	"That looks like it hurts!\n",
+	"Extra ouch!\n", "Woah! Oh! Jeez!\n"};
+	if (hit_points == 0)
+	{
+		std::cout << "] Come oon I'm already killed! Leave me alone plz!\n";
+		return ;
+	}
+	amount = ((int)amount < armor_damage_reduction) ? 0 : amount - armor_damage_reduction;
 	amount = (hit_points - (int)amount < 0) ? hit_points : amount; 
+	#ifdef DEBUG
+	std::cout << "max: " << max_hit_points << "\nhp: " << hit_points << "\n";
+	#endif
 	std::cout << type << " " << name << " takes " << amount << " point"
 	<< ((amount == 1) ? "" : "s") << " of damage\n";
 	if (amount == 0)
@@ -80,13 +93,10 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "No damage! Fall before your robot overlord! Ha ha ha!\n"; 
 		return;
 	}
+	std::cout<< "] " << quotes[rand() % 8];
 	hit_points -= amount;
-	if (hit_points <= 0)
-	{
-		std::cout << type << " " << name << " was disassembled\n";
-		hit_points = 0;
-	}
-	//std::cout << "health: " << hit_points << "\n";
+	if (hit_points == 0)
+		std::cout << type << " " << name << " was destroyed\n";
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -95,13 +105,15 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return;
 	if (hit_points + (int)amount > max_hit_points)
 		amount = (max_hit_points - hit_points);
-	std::cout << type <<" was repaired with " << amount << " hit point";
+	std::cout <<  type << " was repaired with " << amount << " hit point";
 	if ( amount != 1)
 		std::cout << "s";
 	std::cout << "!\n";
 	hit_points += amount;
-	if (hit_points == max_hit_points)
-		std::cout << "] I'm " << name << " and i am alive again!\n";
+	if (amount == 0)
+		std::cout << "] You can,t overrep me. That,s an another game\n";
+	else if (hit_points == max_hit_points)
+		std::cout << "] Full repaired again\n";
 }
 
 std::string	ClapTrap::getType(void)

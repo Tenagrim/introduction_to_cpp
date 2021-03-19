@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-
+//#define DEBUG
 ScavTrap::ScavTrap(std::string name) : hit_points(100), max_hit_points(100),
 energy_points(50), max_energy_points(50),
  level(1), name("SC4V-TP"), melee_attack_damage(20),ranged_attack_damage(15),
@@ -69,15 +69,21 @@ void ScavTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "] " << "Get off here!" << "\n";
 	std::cout << "SC4V-TP " << name << " offends " << target <<
-	" at range, causing " << ranged_attack_damage << " points of damage\n"; 
+	" at safety range, causing " << ranged_attack_damage << " points of damage\n"; 
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
-	amount -= armor_damage_reduction;
-	amount = (amount < 0) ? 0 : amount;
-	//amount = (hit_points - amount < 0) ? hit_points : amount; 
+	if (hit_points == 0)
+	{
+		std::cout << "] Please, don't kill me another time\n";
+		return ;
+	}
+	amount = ((int)amount < armor_damage_reduction) ? 0 : amount - armor_damage_reduction;
 	amount = (hit_points - (int)amount < 0) ? hit_points : amount; 
+	#ifdef DEBUG
+	std::cout << "max: " << max_hit_points << "\nhp: " << hit_points << "\n";
+	#endif
 	std::cout << "SC4V-TP " << name << " takes " << amount << " point"
 	<< ((amount == 1) ? "" : "s") << " of damage\n";
 	if (amount == 0)
@@ -105,7 +111,9 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		std::cout << "s";
 	std::cout << "!\n";
 	hit_points += amount;
-	if (hit_points == max_hit_points)
+	if (amount == 0)
+		std::cout << "] You can,t overrep me. That,s an another game\n";
+	else if (hit_points == max_hit_points)
 		std::cout << "] Full repaired again\n";
 }
 

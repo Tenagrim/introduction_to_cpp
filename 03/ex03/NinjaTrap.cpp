@@ -109,7 +109,7 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 	energy_points -= 25;	
 	std::cout << "NG4-TP " << name << " activating his " << "Betrayenator 3000" << " on "
 	<<target.getName() << " enemy NinjaTrap\n";
-	std::cout << "sorry, brother...\n";
+	std::cout << "] Sorry, brother...\n";
 }
 
 void	NinjaTrap::ninjaShoebox(ScavTrap &target)

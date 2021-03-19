@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 15:42:35 by gshona            #+#    #+#             */
-/*   Updated: 2021/02/28 15:42:37 by gshona           ###   ########.fr       */
+/*   Created: 2021/02/28 15:41:24 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:41:26 by gshona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ FragTrap::FragTrap(const std::string name)
 	ranged_attack_damage = 20;
 	melee_attack_damage = 30;
 	armor_damage_reduction = 5;
-	type = "FR4G-TP"; 
-
+	type = "FR4G-TP";
 	std::cout << "] Greetings, Traveler! I am "<< name <<".\n\
-But you may call me by my locally designated name, \"" << "Claptrap" <<
+	But you may call me by my locally designated name, \"" << "Claptrap" <<
 	"\". \
-Before continuing, please accept this ECHO communication device\n\
-and heads-up display, provided free of charge, by the Dahl Corporation.\n";
+	Before continuing, please accept this ECHO communication device\n\
+	and heads-up display, provided free of charge, by the Dahl Corporation.\n";
 	this->name = name;
 }
 
@@ -46,7 +45,7 @@ FragTrap::~FragTrap()
 	"Brrh... So cold... brrh...", "My assets... frozen!",
 	"I can't feel my fingers! Gah! I don't have any fingers!"};
 	std::cout <<"] " << quotes[rand()% 5] << "\n";
-	std::cout << "Disassembling FR4G-TP core\n";
+	std::cout << "] Disassembling FR4G-TP core\n";
 }
 
 FragTrap::FragTrap(const FragTrap &ref)

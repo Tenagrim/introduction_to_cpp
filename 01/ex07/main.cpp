@@ -6,7 +6,7 @@
 /*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 15:30:17 by gshona            #+#    #+#             */
-/*   Updated: 2021/02/28 15:30:25 by gshona           ###   ########.fr       */
+/*   Updated: 2021/03/18 12:43:57 by gshona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,21 @@ std::string search, std::string replace)
 	std::string		content;
 	std::size_t		len;
 	std::size_t		pos;
-
+	int				count;
 	len = search.length();
+	count = 0;
+	pos = 0;
 	getline(fin, content, '\0');
 	fin.close();
 	while (true)
 	{
-		pos = content.find(search);
+		pos = content.find(search, pos);
+		count++;
 		if (pos == std::string::npos)
 			break;
 		content.replace(pos, len, replace);
-	}		
+		pos += replace.size() + 1;
+	}
 	fout.open(filename, std::ofstream::trunc);
 	fout << content;
 	fout.close();

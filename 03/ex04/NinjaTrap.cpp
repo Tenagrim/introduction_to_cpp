@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 15:45:25 by gshona            #+#    #+#             */
-/*   Updated: 2021/02/28 15:45:27 by gshona           ###   ########.fr       */
+/*   Created: 2021/02/28 15:42:38 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:42:39 by gshona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ NinjaTrap::NinjaTrap(const std::string &name)
 	ranged_attack_damage = 5;
 	melee_attack_damage = 60;
 	armor_damage_reduction = 0;
-	type = "NG4-TP"; 
+	type = "NG4-TP";
 
 	this->name = name;
 	std::cout <<"] Ghosting..\n";
@@ -109,7 +109,7 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 	energy_points -= 25;	
 	std::cout << "NG4-TP " << name << " activating his " << "Betrayenator 3000" << " on "
 	<<target.getName() << " enemy NinjaTrap\n";
-	std::cout << "sorry, brother...\n";
+	std::cout << "] Sorry, brother...\n";
 }
 
 void	NinjaTrap::ninjaShoebox(ScavTrap &target)

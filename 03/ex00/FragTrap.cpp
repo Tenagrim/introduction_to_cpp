@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define DEBUG
+
 #include "FragTrap.hpp"
 FragTrap::FragTrap() : hit_points(100), max_hit_points(100),
 energy_points(100), max_energy_points(100),
@@ -98,9 +100,15 @@ void	FragTrap::takeDamage(unsigned int amount)
 	"Why do I even feel pain?!\n",
 	"That looks like it hurts!\n",
 	"Extra ouch!\n", "Woah! Oh! Jeez!\n"};
-	amount -= armor_damage_reduction;
-	amount = (amount < 0) ? 0 : amount;
-	//amount = (hit_points - amount < 0) ? hit_points : amount; 
+	if (hit_points == 0)
+	{
+		std::cout << "] Come oon I'm already killed! Leave me alone plz!\n";
+		return ;
+	}
+	amount = ((int)amount < armor_damage_reduction) ? 0 : amount - armor_damage_reduction;
+	#ifdef DEBUG
+	std::cout << "max: " << max_hit_points << "\nhp: " << hit_points << "\n";
+	#endif
 	amount = (hit_points - (int)amount < 0) ? hit_points : amount; 
 	std::cout << "FR4P-TP " << name << " takes " << amount << " point"
 	<< ((amount == 1) ? "" : "s") << " of damage\n";
@@ -110,7 +118,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 		return;
 	}
 	std::cout<< "] " << quotes[rand() % 8];
-	hit_points += amount;
+	hit_points -= amount;
 	if (hit_points == 0)
 		std::cout << "FR4G-TP " << name << " was disassembled\n";
 }
@@ -119,6 +127,10 @@ void	FragTrap::beRepaired(unsigned int amount)
 {
 	if (amount == 0)
 		return;
+	#ifdef DEBUG
+	std::cout << "max: " << max_hit_points << "\nhp: " << hit_points << "\n";
+	#endif
+
 	if (hit_points + (int)amount > max_hit_points)
 		amount = (max_hit_points - hit_points);
 	std::cout << "FR4G-TP was repaired with " << amount << " hit point";
@@ -126,7 +138,9 @@ void	FragTrap::beRepaired(unsigned int amount)
 		std::cout << "s";
 	std::cout << "!\n";
 	hit_points += amount;
-	if (hit_points == max_hit_points)
+	if (amount == 0)
+		std::cout << "] That wasn't so necessary. But slill.. Thank you...\n";
+	else if (hit_points == max_hit_points)
 		std::cout << "] I'm " << name << " and i am alive again!\n";
 }
 

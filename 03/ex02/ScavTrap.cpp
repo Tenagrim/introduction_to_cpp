@@ -68,7 +68,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap&ref)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "] I'm not need to be here anymore..\n";
-	std::cout << "Disassembling SC4V-TP core\n";
+	std::cout << "] Disassembling SC4V-TP core\n";
 }
 
 void ScavTrap::meleeAttack(const std::string &target)

@@ -14,6 +14,7 @@
 
 SuperTrap::SuperTrap() : ClapTrap()
 {
+	std::cout << "] Initializing as SUPER TRAP...\n";
 	energy_points = 120;
 	max_energy_points = 120;
 	name = "Unnamed SuperTrap";
@@ -25,6 +26,7 @@ SuperTrap::SuperTrap() : ClapTrap()
 
 SuperTrap::SuperTrap(const std::string &name)
 {
+	std::cout << "] Initializing as SUPER TRAP...\n";
 	energy_points = 120;
 	max_energy_points = 120;
 	melee_attack_damage = 60;
@@ -50,7 +52,7 @@ SuperTrap::SuperTrap(const SuperTrap &ref)
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "Disassembling super core\n";
+	std::cout << "] Disassembling the SUPER CORE\n";
 }
 
 SuperTrap &SuperTrap::operator=(const SuperTrap& ref)

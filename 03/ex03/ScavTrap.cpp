@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 15:42:41 by gshona            #+#    #+#             */
-/*   Updated: 2021/02/28 15:42:42 by gshona           ###   ########.fr       */
+/*   Created: 2021/02/28 15:41:27 by gshona            #+#    #+#             */
+/*   Updated: 2021/02/28 15:41:28 by gshona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	type = "SC4V-TP"; 
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) 
 {
 	std::cout << "] Awakening as ScavTrap...\n";
 	max_energy_points = 50;
@@ -31,8 +31,7 @@ ScavTrap::ScavTrap(std::string name)
 	ranged_attack_damage = 15;
 	melee_attack_damage = 20;
 	armor_damage_reduction = 3;
-	type = "SC4V-TP"; 
-
+	type = "SC4V-TP";
 	this->name = name;
 	std::cout <<"] Greetings, traveller..\n";
 }
@@ -69,7 +68,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap&ref)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "] I'm not need to be here anymore..\n";
-	std::cout << "Disassembling SC4V-TP core\n";
+	std::cout << "] Disassembling SC4V-TP core\n";
 }
 
 void ScavTrap::meleeAttack(const std::string &target)
