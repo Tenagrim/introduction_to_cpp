@@ -20,7 +20,7 @@ private:
 
 public:
     RobotomyRequestForm(const std::string &target);
-    ~RobotomyRequestForm();
+    virtual ~RobotomyRequestForm();
     RobotomyRequestForm(const RobotomyRequestForm &ref);
     RobotomyRequestForm &operator=(const RobotomyRequestForm &ref);
     void execute(Bureaucrat const &executor) const;

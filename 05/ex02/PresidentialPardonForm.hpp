@@ -19,7 +19,7 @@ private:
     std::string target;
     PresidentialPardonForm();
 public:
-    ~PresidentialPardonForm();
+    virtual ~PresidentialPardonForm();
     PresidentialPardonForm(const std::string &target);
     PresidentialPardonForm(const PresidentialPardonForm &ref);
     PresidentialPardonForm  &operator=(const PresidentialPardonForm &ref); 
