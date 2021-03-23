@@ -63,13 +63,16 @@ std::string		Converter::to_string() const
 	else
 		ss << int_value << "\n";
 	ss << "float: ";
+	if (!(flags & F_EMP_MAN))
+		ss << std::fixed;
 	ss  << float_value;
-	if (flags & F_EMP_MAN)
-		ss << ".0";
+	//	ss << ".0";
 	ss << "f\n";
-	ss << "double: "<< double_value;
-	if (flags & F_EMP_MAN)
-		ss << ".0";
+	ss << "double: ";
+	if (!(flags & F_EMP_MAN))
+		ss << std::fixed << std::setprecision(9);
+	ss  << double_value;
+	//	ss << ".0";
 	ss << "\n";
 	return ss.str();
 }
