@@ -15,15 +15,10 @@
 #include <stdexcept>
 
 template <typename T>
-int	*easyFind(T &cont, int find)
+typename T::iterator	easyFind(T &cont, int find)
 {
-	typename T::iterator it = cont.begin();
-	while(it != cont.end())
-	{
-		if(*it == find)
-			return(&(*it));
-		it++;
-	}
-	throw std::runtime_error("number was not found");
-	return(NULL);
+	typename T::iterator it = std::find(cont.begin(), cont.end(), find);
+	if (it == cont.end())
+		throw std::runtime_error("number was not found");
+	return(it);
 }

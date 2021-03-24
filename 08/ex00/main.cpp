@@ -35,8 +35,8 @@ void	testcase(Container &cont, int n)
 	try
 	{
 		display(cont);
-		int *found = easyFind(cont, n);
-		std::cout << "[[" << *found << " | " << found << "]]\n";
+		typename Container::iterator found = easyFind(cont, n);
+		std::cout << "[[" << *found << " | " << &(*found) << "]]\n";
 	}
 	catch (const std::exception &e)
 	{
