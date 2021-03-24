@@ -58,25 +58,44 @@ int		Span::longestSpan()
 	return (*(std::max_element(_content.begin(), _content.end())) - *(std::min_element(_content.begin(),_content.end())));
 }
 
+//#define DEBUG
+
 int		Span::shortestSpan()
 {
-	std::vector<int>::iterator	s_min_b;
-	std::vector<int>::iterator	s_min_a;
-	std::vector<int>::iterator	min;
-	
+	std::vector<int>::iterator	p1;
+	std::vector<int>::iterator	p2;
+	int							shortest;
+	int							tmp;
+
+
 	if (_content.size() < 2)
-		throw (std::runtime_error("there is no span. not enough elements"));
-	min = std::min_element(_content.begin(), _content.end());
-	if (min == _content.begin())
-		return(*(std::min_element((_content.begin() + 1), _content.end())) - *min);
-	else if(min == _content.end() - 1)
-		return(*(std::min_element(_content.begin(), _content.end() - 2)) - *min);
-	else
+		throw (std::runtime_error("there is mo span. not enough elements"));
+	#ifdef DEBUG
+		std::cout << "before sort:\n";
+		display();
+	#endif
+	std::sort(_content.begin(), _content.end());
+	#ifdef DEBUG
+		std::cout << "after sort:\n";
+		display();
+	#endif
+	p2 = _content.begin();
+	p1 = p2 + 1;
+	shortest = *p1 - *p2;
+	while (p1 != _content.end())
 	{
-		s_min_b =  std::min_element(_content.begin(), min - 1);
-		s_min_a = std::min_element(min + 1, _content.end());
-		return(std::min(*s_min_a, *s_min_b) - *min);
-	}	
+		tmp = *p1 - *p2;
+	#ifdef DEBUG
+		std::cout << "tmp:" << tmp << "\n";
+	#endif
+		if (tmp < shortest)
+			shortest = tmp;
+		if (!shortest)
+			break;
+		p1++;
+		p2++;
+	}
+	return shortest;
 }
 
 void	Span::display()

@@ -3,7 +3,7 @@ SRC=main.cpp span.cpp
 HPP=span.hpp
 CC= clang++
 OBJ=$(SRC:.cpp=.o)
-FLAGS= -Wall -Wextra  -Werror 
+FLAGS= -Wall -Wextra  -Werror -g
 
 all: $(NAME)
 

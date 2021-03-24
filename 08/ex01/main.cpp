@@ -59,6 +59,34 @@ void	given_testcase()
 	std::cout << "\n";
 }
 
+void	given_testcase_pp()
+{
+	std::cout << "main from subject++ ================================\n";
+	Span sp = Span(6);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(18);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	disp(sp);
+	std::cout << "\n";
+}
+void	given_testcase_pp_pp()
+{
+	std::cout << "(main from subject++)++ ==============================\n";
+	Span sp = Span(7);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(18);
+	sp.addNumber(18);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	disp(sp);
+	std::cout << "\n";
+}
+
 void	two_elms()
 {
 	std::cout << "two elements =================================\n";
@@ -157,11 +185,13 @@ void	zero_size()
 int main(void)
 {
 	given_testcase();
+	given_testcase_pp();
+	given_testcase_pp_pp();
 	two_elms();
 	one_elm();
 	overload();
 	add_range();
 	add_range_overload();
-	big_span();
+	//big_span();
 	zero_size();
 }

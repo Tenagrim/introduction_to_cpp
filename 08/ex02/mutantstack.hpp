@@ -20,7 +20,7 @@ class MutantStack : public std::stack<T>
 private:
 public:
 	MutantStack();
-	virtual ~MutantStack();
+	~MutantStack();
 	MutantStack(const MutantStack &ref);
 	typedef typename std::stack<T>::container_type::reverse_iterator iterator;
 	using	std::stack<T>::operator=;

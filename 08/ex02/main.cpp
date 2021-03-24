@@ -97,5 +97,7 @@ int main()
 	std::cout << "==================\n";
 	testcase_list();
 	std::cout << "==================\n";
+	std::cout << "[" << sizeof(MutantStack<int>) << "] [" << sizeof(std::stack<int>) << "]\n";
+	std::cout << "==================\n";
 	return 0;
 }
