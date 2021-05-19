@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gshona <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 17:39:15 by gshona            #+#    #+#             */
-/*   Updated: 2021/03/15 17:39:16 by gshona           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include"PresidentialPardonForm.hpp"
 PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5)
 {}
